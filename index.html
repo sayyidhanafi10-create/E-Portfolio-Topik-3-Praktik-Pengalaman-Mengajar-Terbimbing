@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Portfolio Praktik Mengajar Mandiri - Muhammad Sayyid Hanafi</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-navy: #0F172A;
+            --secondary-blue: #1E3A8A;
+            --accent-blue: #2563EB;
+            --light-blue: #3B82F6;
+            --bg-neutral: #F8FAFC;
+            --card-bg: #FFFFFF;
+            --text-main: #1E293B;
+            --text-muted: #64748B;
+            --border-color: #E2E8F0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-neutral);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* Navigasi */
+        nav {
+            background-color: var(--primary-navy);
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #FFF;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            color: #E2E8F0;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--light-blue);
+        }
+
+        /* Hero Section dengan Latar Depan Rektorat UNY */
+        .hero {
+            position: relative;
+            /* Latar belakang diubah menjadi foto Gedung Rektorat UNY */
+            background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(30, 58, 138, 0.85)), 
+                        url('https://uny.ac.id/sites/default/files/2022-10/rektorat_uny.jpg') no-repeat center center/cover;
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+            min-height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin-bottom: 2rem;
+            color: #CBD5E1;
+        }
+
+        .profile-img-preview {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            border: 4px solid var(--accent-blue);
+            object-fit: cover;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: var(--primary-navy);
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid var(--accent-blue);
+            display: inline-block;
+            padding-bottom: 0.5rem;
+        }
+
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h3 {
+            color: var(--secondary-blue);
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .badge-info {
+            background-color: #FEF3C7;
+            color: #92400E;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            background-color: var(--primary-navy);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigasi Utama -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-graduation-cap"></i> E-Portfolio PPG IPS UNY
+            </div>
+            <ul class="nav-links">
+                <li><a href="#beranda">Beranda</a></li>
+                <li><a href="#tentang">Tentang Saya</a></li>
+                <li><a href="#lptk">LPTK & Sekolah</a></li>
+                <li><a href="#peserta-didik">Peserta Didik</a></li>
+                <li><a href="#perangkat">Rencana Pembelajaran</a></li>
+                <li><a href="#nonmengajar">Nonmengajar</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header Hero dengan Latar Belakang Gedung Rektorat UNY -->
+    <header id="beranda" class="hero">
+        <img src="https://drive.google.com/file/d/1UqGE8zWjESMmUxrLuvE6IWj-EXToQTo7/view?usp=sharing" alt="Foto Muhammad Sayyid Hanafi" class="profile-img-preview" onerror="this.src='https://via.placeholder.com/140?text=Foto+Profil'">
+        <h1>E-Portfolio Praktik Mengajar Mandiri</h1>
+        <p>Muhammad Sayyid Hanafi | PPG Calon Guru Pendidikan IPS Universitas Negeri Yogyakarta (UNY) 2026</p>
+        <p style="font-size: 1rem; color: #93C5FD;"><i class="fas fa-map-marker-alt"></i> SMP Negeri 9 Yogyakarta — Kelas IX C (34 Peserta Didik)</p>
+    </header>
+
+    <main class="container">
+        <!-- Modul Pengantar -->
+        <section id="tentang" style="margin-bottom: 4rem;">
+            <h2 class="section-title">Profil & Pandangan Edukasi</h2>
+            <div class="card">
+                <h3><i class="fas fa-user"></i> Tentang Saya</h3>
+                <p>Saya Muhammad Sayyid Hanafi, mahasiswa Program Pendidikan Profesi Guru (PPG) Calon Guru bidang studi Pendidikan IPS di Universitas Negeri Yogyakarta. Bagi saya, menjadi guru bukan sekadar menyampaikan materi, tetapi mendampingi peserta didik membangun pemahaman kritis dan relevan dengan kehidupan sosial bermasyarakat.</p>
+            </div>
+        </section>
+
+        <!-- Informasi LPTK & Sekolah -->
+        <section id="lptk" style="margin-bottom: 4rem;">
+            <h2 class="section-title">Konteks Praktik Mengajar Mandiri</h2>
+            <div class="grid-cards">
+                <div class="card">
+                    <h3><i class="fas fa-university"></i> LPTK UNY</h3>
+                    <p>Universitas Negeri Yogyakarta membekali calon guru dengan kompetensi pedagogik, profesional, sosial, dan kepribadian yang terintegrasi dengan pengalaman praktik di sekolah mitra.</p>
+                </div>
+                <div class="card">
+                    <h3><i class="fas fa-school"></i> SMP Negeri 9 Yogyakarta</h3>
+                    <p>Lokasi pelaksanaan Praktik Mengajar Mandiri. Koordinasi intensif dilakukan bersama Guru Pamong (Sumarjo, S.Pd., M.Pd.) dan DPL (Dr. Sudrajat, S.Pd., M.Pd.).</p>
+                    <a href="https://maps.app.goo.gl/L3nan6HrkGzCR6FH9?g_st=ic" target="_blank" style="color: var(--accent-blue); font-weight: 600; text-decoration: none; margin-top: 10px; display: inline-block;"><i class="fas fa-map-marked-alt"></i> Lihat Lokasi Google Maps</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Profil Peserta Didik & Catatan Verifikasi Data -->
+        <section id="peserta-didik" style="margin-bottom: 4rem;">
+            <h2 class="section-title">Profil Peserta Didik Kelas IX C</h2>
+            <div class="card">
+                <span class="badge-info"><i class="fas fa-exclamation-circle"></i> Catatan Verifikasi Data Diagnostik</span>
+                <p>Pembelajaran dilaksanakan di <strong>Kelas IX C dengan jumlah total 34 peserta didik</strong>. Data diagnostik non-kognitif mencatat preferensi belajar 27 peserta didik (12 visual, 10 auditori, 5 kinestetik/praktik), sementara 7 data peserta didik lainnya perlu verifikasi lanjutan. Data asesmen kognitif recorded awal (35 rekap) juga dalam status perlu verifikasi data mentah.</p>
+            </div>
+        </section>
+
+        <!-- Rencana Pembelajaran Kronologis -->
+        <section id="perangkat" style="margin-bottom: 4rem;">
+            <h2 class="section-title">Rencana Pembelajaran Mandiri (Kronologis)</h2>
+            <div class="grid-cards">
+                <div class="card">
+                    <h3>Rencana 1: Modernisasi & Globalisasi</h3>
+                    <p><strong>Tanggal:</strong> 27 Agustus 2026</p>
+                    <p><strong>Model:</strong> Discovery Learning</p>
+                    <p>Fokus pada identifikasi fenomena di lingkungan sekitar, faktor pendorong, dan penyajian produk kreatif.</p>
+                </div>
+                <div class="card">
+                    <h3>Rencana 2: Perubahan Sosial</h3>
+                    <p><strong>Tanggal:</strong> 7 September 2026</p>
+                    <p><strong>Model:</strong> Problem Based Learning</p>
+                    <p>Menganalisis konsep, karakteristik, bentuk, serta teori perubahan sosial klasik dan kontemporer.</p>
+                </div>
+                <div class="card">
+                    <h3>Rencana 3: Dampak Perubahan Sosial</h3>
+                    <p><strong>Tanggal:</strong> 24 September 2026</p>
+                    <p><strong>Model:</strong> Problem Based Learning</p>
+                    <p>Membahas kesenjangan sosial, perubahan nilai/budaya, dan strategi adaptasi masyarakat.</p>
+                </div>
+                <div class="card">
+                    <h3>Rencana 4: Uang & Lembaga Keuangan</h3>
+                    <p><strong>Tanggal:</strong> 8 Oktober 2026</p>
+                    <p><strong>Model:</strong> Inquiry Learning</p>
+                    <p>Materi berdiri sendiri yang mencakup fungsi uang, sistem pembayaran digital, dan peran lembaga keuangan bank/nonbank.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modul Nonmengajar -->
+        <section id="nonmengajar" style="margin-bottom: 4rem;">
+            <h2 class="section-title">Kegiatan Nonmengajar</h2>
+            <div class="card">
+                <h3><i class="fas fa-volleyball-ball"></i> Fun Games "Jadi Voli" SPELANTA</h3>
+                <p><strong>Pelaksanaan:</strong> Rabu, 7 Oktober 2026 di Lapangan Voli SPELANTA SMPN 9 Yogyakarta.</p>
+                <p>Kegiatan pengembangan karakter, sportivitas, dan keakraban antar-angkatan peserta didik.</p>
+                <a href="https://drive.google.com/drive/folders/1IW-D-ucRdUqgGDw3KEISCULe0e5rN6nO" target="_blank" style="color: var(--accent-blue); font-weight: 600; text-decoration: none; margin-top: 10px; display: inline-block;"><i class="fab fa-google-drive"></i> Lihat Folder Dokumentasi Google Drive</a>
+            </div>
+        </section>
+
+        <!-- Status Video Praktik -->
+        <section id="video">
+            <h2 class="section-title">Analisis Video Praktik Mengajar</h2>
+            <div class="card" style="background-color: #F1F5F9; text-align: center; padding: 3rem;">
+                <i class="fas fa-video-slash" style="font-size: 3rem; color: var(--text-muted); margin-bottom: 1rem;"></i>
+                <p style="font-style: italic; color: var(--text-muted);">Bagian ini akan dilengkapi setelah video praktik mengajar mandiri tersedia.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Muhammad Sayyid Hanafi | PPG Calon Guru Pendidikan IPS Universitas Negeri Yogyakarta</p>
+    </footer>
+
+</body>
+</html>
